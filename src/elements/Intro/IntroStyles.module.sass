@@ -1,0 +1,51 @@
+.intro
+  padding-bottom: 130px
+
+.container
+  position: relative
+  width: 100%
+  max-width: 1050px
+  margin: 0 auto
+  padding: 0 24px
+
+.intro_inner
+  display: flex
+  flex-direction: row
+  align-items: flex-start
+  justify-content: space-between
+  gap: 35px
+
+.inner_img img
+  max-width: 100%
+  width: 100%
+
+.inner_content
+  padding-top: 120px
+  flex: 0 1 60%
+
+.content_text
+  max-width: 367px
+  width: 100%
+
+.button_icon
+  width: 24px
+  height: 24px
+  padding-right: 14px
+
+@media (max-width: 819px)
+  .intro_inner
+    flex-direction: row-reverse
+
+  .inner_img
+    position: absolute
+    z-index: -1
+    top: -155px
+    right: 0
+
+  .inner_img img
+    max-width: none
+    width: auto
+
+  .inner_content
+    padding-top: 140px
+    flex: 0 1 100%

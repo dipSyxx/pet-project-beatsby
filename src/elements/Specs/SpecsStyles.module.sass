@@ -1,0 +1,36 @@
+.specs
+  padding-bottom: 160px
+
+.container
+  position: relative
+  width: 100%
+  max-width: 620px
+  margin: 0 auto
+  padding: 0 24px
+
+.specs_inner
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  gap: 20px
+
+.content_list
+  display: flex
+  flex-direction: column
+  gap: 25px
+
+.inner_img img
+  max-width: 100%
+  width: 100%
+
+@media (max-width: 499px)
+  .inner_content
+    display: flex
+    flex-direction: column
+    align-items: center
+
+  .specs_inner
+    flex-direction: column
+    align-items: unset
+    gap: 40px

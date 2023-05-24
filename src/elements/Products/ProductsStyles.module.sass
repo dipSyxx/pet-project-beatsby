@@ -1,0 +1,24 @@
+.products
+  padding-bottom: 150px
+
+.container
+  position: relative
+  width: 100%
+  max-width: 650px
+  margin: 0 auto
+  padding: 0 24px
+
+.products_list
+  display: grid
+  grid-template-columns: repeat(3, 2fr)
+  grid-template-rows: repeat(2, 2fr)
+  grid-column-gap: 50px
+  grid-row-gap: 80px
+
+@media (max-width: 655px)
+  .products_list
+    align-items: center
+    display: flex
+    flex-direction: row
+    justify-content: center
+    flex-wrap: wrap
