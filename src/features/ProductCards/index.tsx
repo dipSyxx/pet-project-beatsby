@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import styles from './ProductCardsStyles.module.sass'
 import { ProductsDataProps } from '@/data/ProductsData'

@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @next/next/no-html-link-for-pages */
 import React from 'react'
 import styles from './FooterStyles.module.sass'
 import { ProductSection } from './ProductSection'

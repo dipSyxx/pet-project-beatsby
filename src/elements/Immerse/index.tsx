@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import styles from './ImmerseStyles.module.sass'
 import { Button } from '../Button'
