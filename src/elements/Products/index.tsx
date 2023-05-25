@@ -6,7 +6,7 @@ import { ProductCards } from '@/features/ProductCards'
 
 export const Products = () => {
   return (
-    <div className={styles.products}>
+    <div className={styles.products} id="products">
       <Typography marginBottom="mb-70" variant="h2" component="h2">
         Choose Your Style
       </Typography>

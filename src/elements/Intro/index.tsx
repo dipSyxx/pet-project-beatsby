@@ -6,7 +6,7 @@ import { Button } from '../Button'
 
 export const Intro = () => {
   return (
-    <div className={styles.intro}>
+    <div className={styles.intro} id="home">
       <div className={styles.container}>
         <div className={styles.intro_inner}>
           <div className={styles.inner_img}>

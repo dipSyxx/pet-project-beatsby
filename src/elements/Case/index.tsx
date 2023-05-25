@@ -6,7 +6,7 @@ import { Button } from '../Button'
 
 export const Case = () => {
   return (
-    <div className={styles.case}>
+    <div className={styles.case} id="case">
       <Typography marginBottom="mb-70" variant="h2" component="h2">
         Case
       </Typography>

@@ -44,7 +44,7 @@ export const Header = () => {
             <ul className={styles.menu_links}>
               {HeaderLinks.map(({ id, name, href, index }: HeaderLinksProps) => (
                 <li key={id} className={clsx(styles.link_item)}>
-                  <Link activeClass={styles.activeLink} to={href} spy={true} smooth={true} offset={-90} duration={600}>
+                  <Link activeClass={styles.activeLink} to={href} spy={true} smooth={true} offset={-70} duration={600}>
                     {name}
                   </Link>
                 </li>

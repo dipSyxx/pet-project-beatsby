@@ -5,6 +5,7 @@ import styles from './BurgerMenuStyle.module.sass'
 import { HeaderLinks, HeaderLinksProps } from '@/data/HeaderLinks'
 import { Link } from 'react-scroll'
 import Image from 'next/image'
+import { Button } from '@/elements/Button'
 
 type BurgerMenuProps = {
   openBurgerMenu: boolean
@@ -55,6 +56,11 @@ export const BurgerMenu = ({ openBurgerMenu, setOpenBurgerMenu, active, setActiv
                 </Link>
               </li>
             ))}
+            <div className={styles.burger_menu_btn}>
+              <Button component="button" variant="header_btn" classNameStyles="button">
+                Shop
+              </Button>
+            </div>
           </ul>
         </div>
       </div>

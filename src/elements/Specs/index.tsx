@@ -6,7 +6,7 @@ import { SpecsData, SpecsDataProps } from '@/data/SpecsData'
 
 export const Specs = () => {
   return (
-    <div className={styles.specs}>
+    <div className={styles.specs} id="specs">
       <div className={styles.container}>
         <Typography component="h2" variant="h2" marginBottom="mb-70">
           Specs

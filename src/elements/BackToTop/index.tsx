@@ -16,7 +16,14 @@ export const BackToTop = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
   return (
-    <Link className={clsx(styles.backToTophidden, scroll < 50 ? '' : styles.backToTopVisible)} to="/">
+    <Link
+      className={clsx(styles.backToTophidden, scroll < 50 ? '' : styles.backToTopVisible)}
+      to="home"
+      spy={true}
+      smooth={true}
+      offset={-70}
+      duration={600}
+    >
       <i className="fa-solid fa-chevron-up" />
     </Link>
   )
