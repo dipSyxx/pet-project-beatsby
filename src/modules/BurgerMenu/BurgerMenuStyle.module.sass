@@ -18,7 +18,7 @@
 .burger_window
   display: flex
   flex-direction: column
-  background-color: #FFD9C3
+  background-color: var(--bg-page-color)
   width: 100%
   max-width: 320px
   max-height: 100%
@@ -44,9 +44,9 @@
   flex-direction: row
   align-items: center
   justify-content: space-between
-  padding: 10px 15px
+  padding: 25px 15px
   & .header_text
-    font-family: Josefin Sans
+    font-family: var(--default-fw)
     font-size: 32px
     font-weight: 700
   & .burger_close
@@ -61,9 +61,9 @@
     height: 30px
     font-size: 24px
     transition: all 0.5s ease
-    color: #446381
+    color: #fff
     &:hover
-      transform: rotate(180deg)
+      color: #777
 
 //? CONTENT ==================
 
@@ -74,20 +74,25 @@
   font-size: 32px
   align-items: center
   gap: 100px
-  margin-top: 100px
+  margin-top: 70px
 
 .link_item a
   display: flex
   align-items: center
   transition: all 0.3s ease
-  color: #446381
-  font-weight: 500
+  opacity: 0.3
+  transform: scale(0.95)
+  font-weight: 600
   &:hover
-    color: #2EE3FF
+    color: #fff
+    opacity: 1
+    transform: scale(1)
 
 .link_item .activeLink
   transition: all 0.3s ease
-  color: #2EE3FF
+  color: #fff
+  opacity: 1
+  transform: scale(1)
 ---------------------------------------------------------
 //? CONTENT ==================
 
