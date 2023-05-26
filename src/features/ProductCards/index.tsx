@@ -3,10 +3,12 @@ import React from 'react'
 import styles from './ProductCardsStyles.module.sass'
 import { ProductsDataProps } from '@/data/ProductsData'
 import { Button } from '@/elements/Button'
+import { motion } from 'framer-motion'
+import { topAnim } from '@/Animations'
 
-export const ProductCards = ({ id, title, subtitle, hrefImg }: ProductsDataProps) => {
+export const ProductCards = ({ id, title, subtitle, hrefImg, index }: ProductsDataProps) => {
   return (
-    <li className={styles.product_cards}>
+    <motion.li variants={topAnim} custom={index} className={styles.product_cards}>
       <div className={styles.content_img}>
         <img src={`/product/${hrefImg}.png`} alt="product" />
       </div>
@@ -21,6 +23,6 @@ export const ProductCards = ({ id, title, subtitle, hrefImg }: ProductsDataProps
           </Button>
         </div>
       </div>
-    </li>
+    </motion.li>
   )
 }

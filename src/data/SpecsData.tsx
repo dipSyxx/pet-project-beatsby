@@ -14,7 +14,7 @@ export const SpecsData: SpecsDataProps[] = [
     iconHref: 'icon1',
     title: 'Connection',
     subTitle: 'Bluetooth v5.2',
-    anim: 0.8,
+    anim: 1.2,
   },
 
   {
@@ -22,7 +22,7 @@ export const SpecsData: SpecsDataProps[] = [
     iconHref: 'icon2',
     title: 'Battery',
     subTitle: 'Duration 40h',
-    anim: 1.1,
+    anim: 1.4,
   },
 
   {
@@ -30,7 +30,7 @@ export const SpecsData: SpecsDataProps[] = [
     iconHref: 'icon3',
     title: 'Load',
     subTitle: 'Duration 40h',
-    anim: 1.4,
+    anim: 1.6,
   },
 
   {
@@ -39,6 +39,6 @@ export const SpecsData: SpecsDataProps[] = [
     iconHref: 'icon4',
     title: 'Microphone',
     subTitle: 'Supports Apple Siri and Google',
-    anim: 1.7,
+    anim: 1.8,
   },
 ]

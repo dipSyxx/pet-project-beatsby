@@ -1,43 +1,45 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import styles from './IntroStyles.module.sass'
-import { Typography } from '../Typography'
-import { Button } from '../Button'
+import { MTypography, Typography } from '../Typography'
+import { Button, MButton } from '../Button'
+import { motion } from 'framer-motion'
+import { leftAnim, scaleAnim, topAnim } from '@/Animations'
 
 export const Intro = () => {
   return (
-    <div className={styles.intro} id="home">
+    <motion.div className={styles.intro} id="home" initial="hidden" whileInView="visible" viewport={{ once: true }}>
       <div className={styles.container}>
         <div className={styles.intro_inner}>
-          <div className={styles.inner_img}>
+          <motion.div variants={topAnim} custom={1} className={styles.inner_img}>
             <img src="/intro/introMainImg.png" alt="mainImgIntro" />
-          </div>
+          </motion.div>
           <div className={styles.inner_content}>
-            <Typography marginBottom="mb-30" component="h1" variant="h1">
+            <MTypography variants={scaleAnim} custom={2.2} marginBottom="mb-30" component="h1" variant="h1">
               On ear
-            </Typography>
-            <Typography marginBottom="mb-70" component="h3" variant="h3">
+            </MTypography>
+            <MTypography variants={leftAnim} custom={2.4} marginBottom="mb-70" component="h3" variant="h3">
               Beats 3
-            </Typography>
-            <Typography marginBottom="mb-30" component="h4" variant="h4">
+            </MTypography>
+            <MTypography variants={leftAnim} custom={2.6} marginBottom="mb-30" component="h4" variant="h4">
               Overview
-            </Typography>
+            </MTypography>
             <div className={styles.content_text}>
-              <Typography marginBottom="mb-40" component="p" variant="subtitle1">
+              <MTypography variants={leftAnim} custom={2.8} marginBottom="mb-40" component="p" variant="subtitle1">
                 Enjoy award-winning Beats sound with wireless listening freedom and a sleek, streamlined design with
                 comfortable padded earphones, delivering first-rate playback.
-              </Typography>
+              </MTypography>
             </div>
 
-            <Button component="button" variant="primary" classNameStyles="button">
+            <MButton variants={leftAnim} custom={3} component="button" variant="primary" classNameStyles="button">
               <div className={styles.button_icon}>
                 <img src="/icon/bag.png" alt="bag" />
               </div>
               Add to Bag <span style={{ fontSize: '20px', fontWeight: '700' }}>N399K</span>
-            </Button>
+            </MButton>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

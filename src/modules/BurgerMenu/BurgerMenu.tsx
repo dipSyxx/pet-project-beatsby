@@ -5,7 +5,9 @@ import styles from './BurgerMenuStyle.module.sass'
 import { HeaderLinks, HeaderLinksProps } from '@/data/HeaderLinks'
 import { Link } from 'react-scroll'
 import Image from 'next/image'
-import { Button } from '@/elements/Button'
+import { Button, MButton } from '@/elements/Button'
+import { motion } from 'framer-motion'
+import { leftAnim, scaleAnim } from '@/Animations'
 
 type BurgerMenuProps = {
   openBurgerMenu: boolean
@@ -29,20 +31,24 @@ export const BurgerMenu = ({ openBurgerMenu, setOpenBurgerMenu, active, setActiv
       ></div>
       {/* Задній план ===============*/}
       {/* Контентна частина ================== */}
-      <div className={clsx(styles.burger_window, openBurgerMenu ? styles.burger_window_show : '')}>
-        <div className={styles.burger_menu_header}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        className={clsx(styles.burger_window, openBurgerMenu ? styles.burger_window_show : '')}
+      >
+        <motion.div variants={scaleAnim} custom={0.5} className={styles.burger_menu_header}>
           {/* header */}
           <Image src="/logo/logo.png" alt="logo" width={32} height={32} />
           <div className={styles.header_text}>Menu</div>
           <button className={styles.burger_close} onClick={handleCloseBurgerMenu}>
             X
           </button>
-        </div>
+        </motion.div>
 
         <div className={styles.burger_menu_body}>
           <ul className={styles.menu_links}>
-            {HeaderLinks.map(({ id, name, href }: HeaderLinksProps) => (
-              <li key={id} className={clsx(styles.link_item)}>
+            {HeaderLinks.map(({ id, name, href, index }: HeaderLinksProps) => (
+              <motion.li variants={leftAnim} custom={index} key={id} className={clsx(styles.link_item)}>
                 <Link
                   onClick={handleCloseBurgerMenu}
                   activeClass={styles.activeLink}
@@ -54,16 +60,22 @@ export const BurgerMenu = ({ openBurgerMenu, setOpenBurgerMenu, active, setActiv
                 >
                   {name}
                 </Link>
-              </li>
+              </motion.li>
             ))}
             <div className={styles.burger_menu_btn}>
-              <Button component="button" variant="header_btn" classNameStyles="button">
+              <MButton
+                variants={leftAnim}
+                custom={1.6}
+                component="button"
+                variant="header_btn"
+                classNameStyles="button"
+              >
                 Shop
-              </Button>
+              </MButton>
             </div>
           </ul>
         </div>
-      </div>
+      </motion.div>
       {/* Контентна частина ================== */}
     </>
   )

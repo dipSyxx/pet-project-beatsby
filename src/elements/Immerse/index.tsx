@@ -3,11 +3,18 @@
 import React from 'react'
 import styles from './ImmerseStyles.module.sass'
 import { Button } from '../Button'
+import { motion } from 'framer-motion'
+import { scaleAnim } from '@/Animations'
 
 export const Immerse = () => {
   return (
-    <div className={styles.immerse}>
-      <div className={styles.container}>
+    <motion.div
+      className={styles.immerse}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      <motion.div variants={scaleAnim} custom={1} className={styles.container}>
         <div className={styles.container_content}>
           <div className={styles.immerse_inner}>
             <div className={styles.inner_content}>
@@ -28,7 +35,7 @@ export const Immerse = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }

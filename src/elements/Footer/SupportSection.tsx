@@ -3,11 +3,13 @@ import styles from './FooterStyles.module.sass'
 import { Typography } from '../Typography'
 import Link from 'next/link'
 import { FooterSectionSupport, FooterSectionSupportProps } from '@/data/FooterSection'
+import { topAnim } from '@/Animations'
+import { motion } from 'framer-motion'
 
 export const SupportSection = () => {
   return (
     <>
-      <div className={styles.inner_support}>
+      <motion.div variants={topAnim} custom={1.6} className={styles.inner_support}>
         <Typography component="h4" variant="h4">
           Support
         </Typography>
@@ -22,7 +24,7 @@ export const SupportSection = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </motion.div>
     </>
   )
 }

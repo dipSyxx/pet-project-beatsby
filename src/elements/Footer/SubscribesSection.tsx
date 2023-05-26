@@ -1,11 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import styles from './FooterStyles.module.sass'
+import { rightAnim } from '@/Animations'
+import { motion } from 'framer-motion'
 
 export const SubscribesSection = () => {
   return (
     <>
-      <div className={styles.subscribes}>
+      <motion.div variants={rightAnim} custom={1.8} className={styles.subscribes}>
         <form className={styles.subscribes_form}>
           <input placeholder="Email" className={styles.form_input} />
           <button type="submit" className={styles.form_btn}>
@@ -27,7 +29,7 @@ export const SubscribesSection = () => {
             <i className="fa-brands fa-linkedin" />
           </a>
         </ul>
-      </div>
+      </motion.div>
     </>
   )
 }

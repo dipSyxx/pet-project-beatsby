@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import styles from './HeaderStyles.module.sass'
-import { HeaderActions } from '../HeaderActions'
+import { HeaderActions, MHeaderActions } from '../HeaderActions'
 import { Link } from 'react-scroll'
 import clsx from 'clsx'
 import { HeaderLinks, HeaderLinksProps } from '@/data/HeaderLinks'
 import { BurgerMenu } from '@/modules/BurgerMenu/BurgerMenu'
-// import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { topAnim, leftAnim } from '@/Animations'
 
 export const Header = () => {
   const [scroll, setScroll] = useState(0)
@@ -35,32 +36,42 @@ export const Header = () => {
         active={active}
         setActive={setActive}
       />
-      <header className={clsx(styles.header, scroll < 50 ? '' : styles.headerBg)}>
+      <motion.header
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className={clsx(styles.header, scroll < 50 ? '' : styles.headerBg)}
+      >
         <div className={clsx(styles.container)}>
-          <Link to="home" spy={true} smooth={true} offset={50} duration={600} className={styles.header_logos}>
-            <Image src="/logo/logo.png" alt="logo" width={32} height={32} />
-          </Link>
+          <motion.div variants={leftAnim} custom={0.6}>
+            <Link to="home" spy={true} smooth={true} offset={50} duration={600} className={styles.header_logos}>
+              <Image src="/logo/logo.png" alt="logo" width={32} height={32} />
+            </Link>
+          </motion.div>
+
           <nav className={styles.nav_menu}>
             <ul className={styles.menu_links}>
               {HeaderLinks.map(({ id, name, href, index }: HeaderLinksProps) => (
-                <li key={id} className={clsx(styles.link_item)}>
+                <motion.li variants={topAnim} key={id} custom={index} className={clsx(styles.link_item)}>
                   <Link activeClass={styles.activeLink} to={href} spy={true} smooth={true} offset={-70} duration={600}>
                     {name}
                   </Link>
-                </li>
+                </motion.li>
               ))}
-              <HeaderActions />
-              <button
+              <MHeaderActions />
+              <motion.button
+                variants={topAnim}
+                custom={1}
                 onClick={handleBurgerActive}
                 className={clsx(styles.nav_menu_burger, active ? styles.nav_menu_burger_active : '')}
                 type="button"
               >
                 <span></span>
-              </button>
+              </motion.button>
             </ul>
           </nav>
         </div>
-      </header>
+      </motion.header>
     </>
   )
 }

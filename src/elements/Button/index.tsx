@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { createElement, FC, forwardRef, ReactNode } from 'react'
 
 import styles from './Button.module.sass'
+import { motion } from 'framer-motion'
 
 type ButtonProps = {
   children: ReactNode
@@ -32,4 +33,4 @@ export const Button: FC<ButtonProps> = forwardRef(
   },
 )
 
-// export const MButton = motion(Button)
+export const MButton = motion(Button)

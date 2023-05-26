@@ -5,14 +5,16 @@ import styles from './FooterStyles.module.sass'
 import { ProductSection } from './ProductSection'
 import { SupportSection } from './SupportSection'
 import { SubscribesSection } from './SubscribesSection'
+import { motion } from 'framer-motion'
+import { leftAnim } from '@/Animations'
 
 export const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <motion.footer className={styles.footer} initial="hidden" whileInView="visible" viewport={{ once: true }}>
       <div className={styles.container}>
         <div className={styles.footer_inner}>
           <a href="/" className={styles.inner_logo}>
-            <img src="/logo/logo.png" alt="footerLogo" />
+            <motion.img variants={leftAnim} custom={1.2} src="/logo/logo.png" alt="footerLogo" />
           </a>
           <ProductSection />
           <SupportSection />
@@ -22,6 +24,6 @@ export const Footer = () => {
           <p>© Agara. All rights reserved</p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
